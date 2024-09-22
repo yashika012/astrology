@@ -41,7 +41,7 @@ const ImageWithComments = () => {
           src={images[currentImageIndex]}
           alt="kundli"
           onClick={(e) => setNewCommentPosition({ x: e.clientX, y: e.clientY })}
-          className="max-w-full min-h-screen mt-5"
+          className="max-w-full h-[90vh] mt-5"
         />
 
         {/* Display and add comments specific to the current image */}
