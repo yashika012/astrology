@@ -1,33 +1,32 @@
-import Editor from "./components/Editor";
-import Form from "./components/Form";
-import {createBrowserRouter , Link, RouterProvider} from 'react-router-dom';
-import Nav from "./components/Nav";
+import React from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Nav from './components/Nav';
+import Form from './components/Form';
+import ImageWithComments from './components/ImageWithComments'; // This component will handle image + comments
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Nav/>,
+    element: <Nav />, // Home or navigation component
   },
   {
     path: "/form",
-    element: <Form/>,
+    element: <Form />, // Form component for another route
   },
   {
-    path:"editor",
-    element:<Editor/>
-  }
+    path: "/image",
+    element: <ImageWithComments /> // Image and comments logic is handled here
+  },
 ]);
 
-function App() {
-  
-
+const App = () => {
   return (
     <>
-     <RouterProvider router={router} />
+     
+      <RouterProvider router={router} />
+    
     </>
-  )
-}
+  );
+};
 
-export default App
-
-
+export default App;
