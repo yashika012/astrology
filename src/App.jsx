@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { createContext, useState } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Nav from './components/Nav';
 import Form from './components/Form';
 import ImageWithComments from './components/ImageWithComments'; // This component will handle image + comments
+
+export const svgContext = createContext();
 
 const router = createBrowserRouter([
   {
@@ -20,12 +22,13 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
+  const [svg, setSvg] = useState(null);
   return (
-    <>
+    <svgContext.Provider value={{ svg, setSvg }}>
      
       <RouterProvider router={router} />
     
-    </>
+    </svgContext.Provider>
   );
 };
 
